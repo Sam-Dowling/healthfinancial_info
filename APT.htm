@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<head>
+    <title>APT Name Generator</title>
+    <meta name="title" content="Threat Actor Name Generator">
+    <meta name="robots" content="nofollow">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style>
+        * {
+            color: lime;
+            font-family: "Lucida Console", Monaco, monospace;
+        }
+
+        body {
+            text-align: center;
+            background-color: black;
+        }
+
+        h1 {
+            font-size: 42pt;
+        }
+
+        @media screen and (max-width: 800px) {
+            h1 {
+                font-size: 10vw;
+            }
+        }
+
+        @media screen and (max-width: 800px) {
+            #actor {
+                font-size: 8vw;
+            }
+        }
+
+        @media screen and (max-width: 800px) {
+            #footer {
+                font-size: 2vw;
+            }
+        }
+
+        #actor {
+            font-size: 40pt;
+        }
+
+        #btn {
+            font-size: 15pt;
+            border-radius: 5%;
+            padding: 1%;
+            background: rgb(58, 58, 58);
+            border-color: rgb(30, 30, 30);
+        }
+
+        #footer {
+            position: absolute;
+            transform: translateX(-50%);
+            bottom: 0px;
+            font-size: 15pt;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>APT Name Generator</h1>
+    <br>
+    <br>
+    <br>
+    <h3>Our threat intelligence suggest the threat actor responsible is...</h3>
+    <br>
+    <span id="actor"></span>
+    <br><br><br>
+    <button id="btn" onclick="generateActor()">Roll Again</button>
+    <script>
+        let animals = [
+            "ant",
+            "antlion",
+            "aphid",
+            "bedbug",
+            "bee",
+            "beetle",
+            "black widow",
+            "brown recluse",
+            "bumblebee",
+            "butterfly",
+            "caterpillar",
+            "centipede",
+            "cicada",
+            "crane fly",
+            "cricket",
+            "cutworm",
+            "dragonfly",
+            "dung beetle",
+            "fire ant",
+            "firefly",
+            "flea",
+            "fly",
+            "fruit fly",
+            "gnat",
+            "grasshopper",
+            "hornet",
+            "horsefly",
+            "ladybug",
+            "lanternfly",
+            "larva",
+            "leafcutter",
+            "leafhopper",
+            "louse",
+            "mayfly",
+            "mealybug",
+            "millipede",
+            "monarch",
+            "mosquito",
+            "moth",
+            "mud dauber",
+            "orb weaver",
+            "pill bug",
+            "praying mantis",
+            "robber fly",
+            "sandfly",
+            "scorpion",
+            "silverfish",
+            "slug",
+            "snail",
+            "spider",
+            "stick insect",
+            "stinkbug",
+            "swallowtail",
+            "tarantula",
+            "termite",
+            "tick",
+            "tsetse fly",
+            "wasp",
+            "water strider",
+            "webworm",
+            "weevil",
+            "wolf spider",
+            "woodlice",
+            "worm",
+            "yellow jacket"
+        ];
+
+        let descriptors = [
+            "abyssal",
+            "adorable",
+            "aggressive",
+            "anchor",
+            "ancient",
+            "arcane",
+            "belligerent",
+            "berserk",
+            "brutal",
+            "calculating",
+            "carbon",
+            "cerulean",
+            "charming",
+            "clever",
+            "cobalt",
+            "covert",
+            "cozy",
+            "crazy",
+            "cunning",
+            "daring",
+            "darling",
+            "deep",
+            "dragon",
+            "dungeon",
+            "elder",
+            "elderwood",
+            "elegant",
+            "elusive",
+            "emissary",
+            "enchanted",
+            "enchanting",
+            "energetic",
+            "evil",
+            "fancy",
+            "ferocious",
+            "fiendish",
+            "fierce",
+            "frenzied",
+            "goblin",
+            "gothic",
+            "graphite",
+            "haunted",
+            "helix",
+            "hidden",
+            "intelligent",
+            "intense",
+            "karate",
+            "kungfu",
+            "lotus",
+            "lucky",
+            "magical",
+            "messenger",
+            "midnight",
+            "mummified",
+            "mummy",
+            "mustang",
+            "mystic",
+            "mythic",
+            "nasty",
+            "neon",
+            "night",
+            "nightshade",
+            "playful",
+            "plush",
+            "poisonous",
+            "primordial",
+            "radiant",
+            "rambunctious",
+            "relentless",
+            "rugged",
+            "ruthless",
+            "sarcastic",
+            "savage",
+            "shadowy",
+            "sinister",
+            "smelly",
+            "snappy",
+            "sneaky",
+            "spicy",
+            "spiral",
+            "spring",
+            "stardust",
+            "stealthy",
+            "stone",
+            "toxic",
+            "twilight",
+            "unrelenting",
+            "venomous",
+            "verbose",
+            "vibrant",
+            "vixen",
+            "voodoo",
+            "whimsical",
+            "wicked",
+            "wild",
+            "witty"
+        ];
+        function generateActor() {
+            let animalIdx = Math.floor(Math.random() * animals.length);
+            let descriptorIdx = Math.floor(Math.random() * descriptors.length);
+            let descriptor = descriptors[descriptorIdx][0].toUpperCase() + descriptors[descriptorIdx].substring(1);
+            let animal = animals[animalIdx][0].toUpperCase() + animals[animalIdx].substring(1);
+            document.getElementById("actor").innerText = descriptor + " " + animal;
+            gtag('event', 'click', {
+                'event_category': 'generate'
+            });
+        }
+        window.onload = () => {
+            generateActor();
+        }
+    </script>
+</body>
+
+</html>
